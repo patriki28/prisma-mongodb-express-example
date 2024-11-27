@@ -1,4 +1,4 @@
-import type { AnyZodObject } from 'zod';
+import type { AnyZodObject, TypeOf } from 'zod';
 import { z } from 'zod';
 
 export const NoteSchema: AnyZodObject = z.object({
@@ -7,3 +7,5 @@ export const NoteSchema: AnyZodObject = z.object({
     body: z.string().trim().min(4).max(500)
   })
 });
+
+export type CreateNoteInput = TypeOf<typeof NoteSchema>;

@@ -47,3 +47,29 @@ describe('GET /api/notes/:noteId', () => {
     expect(response.body.message).toBe('Note fetched succesfully');
   });
 });
+
+describe('POST /api/notes/', () => {
+  it('Should be able to create a new note and validate the input data', async () => {
+    const noteInput = {
+      title: 'Task for Today',
+      body: 'Clean my room'
+    };
+
+    const createdNote = {
+      id: '123',
+      ...noteInput,
+      createdAt: new Date('2024-11-26T09:00:00Z'),
+      updatedAt: new Date('2024-11-26T10:00:00Z')
+    };
+
+    prismaMock.notes.create.mockResolvedValue(createdNote);
+
+    const response = await request(app)
+      .post(`/api/notes/`)
+      .send(noteInput)
+      .expect('Content-Type', /json/)
+      .expect(201);
+
+    expect(response.body.message).toBe('Note created succesfully');
+  });
+});

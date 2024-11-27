@@ -18,7 +18,7 @@ export default class NoteController {
     try {
       const notes = await this.noteService.getAllNotes();
 
-      res.send({
+      res.status(200).send({
         message: 'Notes fetched succesfully',
         data: notes
       });
@@ -47,7 +47,7 @@ export default class NoteController {
 
       const note = await this.noteService.getNoteById(noteId);
 
-      res.send({
+      res.status(200).send({
         message: 'Note fetched succesfully',
         data: note
       });
@@ -63,6 +63,23 @@ export default class NoteController {
       } else {
         next(e);
       }
+    }
+  };
+
+  public createNote = async (
+    req: Request,
+    res: CustomResponse<Notes>,
+    next: NextFunction
+  ) => {
+    try {
+      const note = await this.noteService.createNote(req.body);
+
+      res.status(201).send({
+        message: 'Note created succesfully',
+        data: note
+      });
+    } catch (e) {
+      next(e);
     }
   };
 }

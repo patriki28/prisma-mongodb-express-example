@@ -1,4 +1,5 @@
 import type { Notes } from '@prisma/client';
+import type { CreateNoteInput } from '@/schemas/notes.schema';
 import { prisma } from '@/config/db.config';
 
 export default class NoteService {
@@ -18,6 +19,12 @@ export default class NoteService {
         id: noteId
       }
     });
+
+    return note;
+  }
+
+  public async createNote(data: CreateNoteInput['body']): Promise<Notes> {
+    const note = await prisma.notes.create({ data });
 
     return note;
   }
