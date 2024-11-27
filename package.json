@@ -11,8 +11,9 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write \"./src/**/*.+(js|ts|json)\"",
     "format:check": "prettier --check \"./src/**/*.+(js|ts|json)\"",
-    "commit": "cz",
     "prisma:generate": "npx prisma generate",
+    "prisma:dbpush": "npx prisma db push",
+    "commit": "cz",
     "prepare": "husky"
   },
   "keywords": [
