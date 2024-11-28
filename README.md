@@ -17,6 +17,15 @@
 | Prettier   | Code formatter for consistent and clean codestyle.                             |
 | Jest       | Testing framework to ensure code reliability and catch regressions.            |
 
+### Swagger API Documentation
+
+Access the interactive Swagger UI for exploring and testing the API endpoints.
+
+**Endpoint:**
+`GET /api-docs`
+
+![Endpoints Overview](./img/swagger-endpoints.png)![Schema Documentation](./img/swagger-schema.png)
+
 ### Scripts
 
 Following are the list of predefined scripts available in the app
