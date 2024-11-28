@@ -4,6 +4,7 @@
   "description": "A simple REST API CRUD.",
   "main": "./src/index.ts",
   "scripts": {
+    "start": "tsx watch -r tsconfig-paths/register src/index.ts",
     "build": "npm run prisma:generate && tsc --build",
     "dev": "tsx watch -r tsconfig-paths/register src/index.ts",
     "test": "jest --runInBand --no-cache --forceExit",
