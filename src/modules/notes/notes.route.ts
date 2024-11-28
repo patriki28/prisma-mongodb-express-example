@@ -3,10 +3,13 @@ import Controller from './notes.controller';
 
 import {
   createNoteRateLimiter,
+  deleteAllNotesRateLimiter,
+  deleteNoteByIdRateLimiter,
   getAllNotesRateLimit,
   getNoteByIdRateLimiter,
   updateNoteRateLimiter
 } from './notes-rate-limiters';
+
 import { validator } from '@/middlwares/validator.middleware';
 import { NoteSchema } from '@/schemas/notes.schema';
 
@@ -35,7 +38,7 @@ const controller = new Controller();
  * @summary Retrieve All Notes
  * @tags Notes
  * @description Fetches all notes from the database, ordered by the creation date in descending order.
- * @return {array<Notes>} 200 - A list of notes
+ * @return {array<Notes>} 200 - Successfully retrieved all notes
  */
 notes.get('/', getAllNotesRateLimit, controller.getAllNotes);
 
@@ -53,7 +56,7 @@ notes.get('/:noteId', getNoteByIdRateLimiter, controller.getNoteById);
  * @summary Create Note
  * @tags Notes
  * @param {NoteInput} request.body.required - The note to create
- * @return {Notes} 201 - The newly created note
+ * @return {Notes} 201 - Successfully created a new note
  */
 notes.post(
   '/',
@@ -69,7 +72,7 @@ notes.post(
  * @description Updates an existing note with the provided title and body.
  * @param {string} noteId.path.required - The ID of the note to update
  * @param {NoteInput} request.body.required - The updated note data
- * @return {Notes} 201 - Successfully updated the note
+ * @return {Notes} 200 - Successfully updated the note
  */
 notes.put(
   '/:noteId',
@@ -77,4 +80,22 @@ notes.put(
   updateNoteRateLimiter,
   controller.updateNote
 );
+
+/**
+ * DELETE /api/notes/{noteId}
+ * @summary Delete a Note by ID
+ * @tags Notes
+ * @param {string} noteId.path.required - The ID of the note to retrieve
+ * @return  200 - Successfully deleted the note
+ */
+notes.delete('/:noteId', deleteNoteByIdRateLimiter, controller.deleteNoteById);
+
+/**
+ * DELETE /api/notes/
+ * @summary Delete All Notes
+ * @tags Notes
+ * @return 200 - Successfully deleted all notes
+ */
+notes.delete('/', deleteAllNotesRateLimiter, controller.deleteAllNotes);
+
 export default notes;

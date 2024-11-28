@@ -9,7 +9,7 @@ describe('GET /api/notes', () => {
       .expect('Content-Type', /json/)
       .expect(200);
 
-    expect(response.body.message).toBe('Notes fetched succesfully');
+    expect(response.body.message).toBe('All Notes fetched succesfully');
     prismaMock.notes.findMany.mockResolvedValue(response.body.data);
   });
 });
@@ -36,7 +36,7 @@ describe('POST /api/notes/', () => {
     };
 
     const response = await request(app)
-      .post(`/api/notes/`)
+      .post('/api/notes/')
       .send(noteInput)
       .expect('Content-Type', /json/)
       .expect(201);
@@ -59,9 +59,33 @@ describe('PUT /api/notes/:noteId', () => {
       .put(`/api/notes/${noteId}`)
       .send(noteInput)
       .expect('Content-Type', /json/)
-      .expect(201);
+      .expect(200);
 
     expect(response.body.message).toBe('Note updated succesfully');
     prismaMock.notes.update.mockResolvedValue(response.body.data);
+  });
+});
+
+describe('DELETE /api/notes/:noteId', () => {
+  it('Should delete a note by its ID', async () => {
+    const noteId = '6745af5666afa2a589a793b7';
+
+    const response = await request(app)
+      .delete(`/api/notes/${noteId}`)
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    expect(response.body.message).toBe('Note deleted succesfully');
+  });
+});
+
+describe('DELETE /api/notes/', () => {
+  it('Should delete a note by its ID', async () => {
+    const response = await request(app)
+      .delete('/api/notes')
+      .expect('Content-Type', /json/)
+      .expect(200);
+
+    expect(response.body.message).toBe('All Notes deleted succesfully');
   });
 });

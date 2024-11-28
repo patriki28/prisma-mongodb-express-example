@@ -37,4 +37,12 @@ export default class NoteService {
 
     return note;
   }
+
+  public async deleteNoteById(noteId: string): Promise<void> {
+    await prisma.notes.delete({ where: { id: noteId } });
+  }
+
+  public async deleteAllNotes(): Promise<void> {
+    await prisma.notes.deleteMany();
+  }
 }
