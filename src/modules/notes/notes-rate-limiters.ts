@@ -29,3 +29,13 @@ export const createNoteRateLimiter = rateLimit({
     errors: [{ message: 'Too many requests, please try again later.' }]
   }
 });
+
+export const updateNoteRateLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 50,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: {
+    errors: [{ message: 'Too many requests, please try again later.' }]
+  }
+});

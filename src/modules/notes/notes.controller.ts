@@ -82,4 +82,32 @@ export default class NoteController {
       next(e);
     }
   };
+
+  public updateNote = async (
+    req: Request,
+    res: CustomResponse<Notes>,
+    next: NextFunction
+  ) => {
+    const noteId = req.params.noteId as string;
+
+    try {
+      if (!noteId) {
+        next(
+          new BadRequestError({
+            code: 400,
+            message: 'Note Id is required!',
+            logging: true
+          })
+        );
+      }
+      const note = await this.noteService.updateNote(noteId, req.body);
+
+      res.status(201).send({
+        message: 'Note updated succesfully',
+        data: note
+      });
+    } catch (e) {
+      next(e);
+    }
+  };
 }

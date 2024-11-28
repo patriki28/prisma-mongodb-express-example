@@ -8,4 +8,4 @@ export const NoteSchema: AnyZodObject = z.object({
   })
 });
 
-export type CreateNoteInput = TypeOf<typeof NoteSchema>;
+export type NoteInput = TypeOf<typeof NoteSchema>;
