@@ -37,8 +37,9 @@ Following are the list of predefined scripts available in the app
 | test            | Runs tests.                                                  | npm run test            |
 | lint            | Lints the files with eslint.                                 | npm run lint            |
 | lint:fix        | Lints and fixes files with eslint.                           | npm run lint:fix        |
-| format          | Format files with prettier.                                  | npm run format          |
-| format:check    | Check the format of files with prettier.                     | npm run format:check    |
+| prettier        | Check the format of files with prettier.                     | npm run prettier        |
+| prettier:fix    | Format files with prettier.                                  | npm run prettier:fix    |
+| format          | Format files with prettier and eslint.                       | npm run format          |
 | prisma:generate | Generates prisma client types.                               | npm run prisma:generate |
 | prisma:dbpush   | Pushes Prisma schema changes to the database.                | npm run prisma:dbpush   |
 | commit          | Opens commitizen.                                            | npm run commit          |
