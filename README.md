@@ -17,6 +17,24 @@
 | Prettier   | Code formatter for consistent and clean codestyle.                             |
 | Jest       | Testing framework to ensure code reliability and catch regressions.            |
 
+### Features
+
+✅ Prisma integrated
+
+✅ Swagger for api documentation
+
+✅ Linting and formatting with eslint and prettier
+
+✅ Testing with jest and supertest
+
+✅ Commit hooks with husky
+
+✅ Automates building, linting, formatting, and testing using GitHub Actions.
+
+✅ Preconfigured error handlers
+
+✅ Ensures consistent file naming convention
+
 ### Swagger API Documentation
 
 Access the interactive Swagger UI for exploring and testing the API endpoints.
