@@ -17,7 +17,7 @@
 | Prettier   | Code formatter for consistent and clean codestyle.                             |
 | Jest       | Testing framework to ensure code reliability and catch regressions.            |
 
-### Features
+## Features
 
 ✅ Prisma integrated
 
@@ -35,7 +35,7 @@
 
 ✅ Ensures consistent file naming convention
 
-### Swagger API Documentation
+## Swagger API Documentation
 
 Access the interactive Swagger UI for exploring and testing the API endpoints.
 
@@ -61,3 +61,29 @@ Following are the list of predefined scripts available in the app
 | prisma:generate | Generates prisma client types.                               | npm run prisma:generate |
 | prisma:dbpush   | Pushes Prisma schema changes to the database.                | npm run prisma:dbpush   |
 | commit          | Opens commitizen.                                            | npm run commit          |
+
+## Folder structure
+
+```
+├── prisma
+├── src
+	├── config
+	├── middlewares
+	├── modules
+	├── schemas
+	├── tests
+	├── types
+	└── utils
+```
+
+| Folder      | Description                                                                                                              |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| prisma      | Used by the Prisma to store database schema definitions, seed data, and other related files.                             |
+| src         | Source folder                                                                                                            |
+| config      | Contains configuration files for the whole app and different libraries.                                                  |
+| middlewares | Contains middleware functions which can be used to modify requests and responses as they pass through the app.           |
+| modules     | Contains the main modules of the app, each of which can contain submodules, controllers, services, and other components. |
+| schemas     | Contains Zod schemas or validation models for API requests and responses, ensuring type safety and validation.           |
+| tests       | Unit and integration tests for validating API functionality and business logic.                                          |
+| types       | Contains type definitions which can be used throughout the app to ensure type safety and consistency.                    |
+| utils       | Contains utility functions or classes that can be used throughout the app for common tasks.                              |
