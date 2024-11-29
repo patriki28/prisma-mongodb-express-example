@@ -44,7 +44,7 @@ Access the interactive Swagger UI for exploring and testing the API endpoints.
 
 ![Endpoints Overview](./img/swagger-endpoints.png)![Schema Documentation](./img/swagger-schema.png)
 
-### Scripts
+## Scripts
 
 Following are the list of predefined scripts available in the app
 
