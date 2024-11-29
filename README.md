@@ -67,13 +67,13 @@ Following are the list of predefined scripts available in the app
 ```
 ├── prisma
 ├── src
-	├── config
-	├── middlewares
-	├── modules
-	├── schemas
-	├── tests
-	├── types
-	└── utils
+ ├── config
+ ├── middlewares
+ ├── modules
+ ├── schemas
+ ├── tests
+ ├── types
+ └── utils
 ```
 
 | Folder      | Description                                                                                                              |
