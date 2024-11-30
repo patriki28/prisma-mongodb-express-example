@@ -37,6 +37,28 @@
 
 ✅ Ensures consistent file naming convention
 
+## Clone the project
+
+```
+git clone hthttps://github.com/patriki28/prisma-mongodb-express-example.git
+```
+
+Go to the project directory
+
+```
+cd prisma-mongodb-express-example
+```
+
+## Environment setup
+
+Create a .env file
+
+```
+DATABASE_URL=
+PORT=
+BASE_URL=
+```
+
 ## Swagger API Documentation
 
 Access the interactive Swagger UI for exploring and testing the API endpoints.
