@@ -1,6 +1,5 @@
 import type { NextFunction, Request, Response } from 'express';
 import type { AnyZodObject } from 'zod';
-import { ZodError } from 'zod';
 
 export const validator =
   (schema: AnyZodObject) =>
@@ -14,11 +13,6 @@ export const validator =
 
       next();
     } catch (e) {
-      if (e instanceof ZodError) {
-        res.status(400).json({
-          errors: e.errors
-        });
-      }
       next(e);
     }
   };

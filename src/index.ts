@@ -11,6 +11,7 @@ import { APP_BASE_URL, APP_PORT } from './config/env.config';
 import 'express-async-errors';
 import { errorHandler } from './middlwares/error-handler.middleware';
 import NotFoundError from './utils/errors/not-found-error';
+import logger from './lib/logger';
 
 const app = express();
 
@@ -28,7 +29,7 @@ app.use('*', (req: Request, res: Response, next: NextFunction) => {
 });
 
 app.listen(APP_PORT, () =>
-  console.log(`Server is running on ${APP_BASE_URL}${APP_PORT}`)
+  logger.info(`Server is running on ${APP_BASE_URL}${APP_PORT}`)
 );
 
 export default app;
