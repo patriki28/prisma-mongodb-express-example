@@ -31,6 +31,8 @@
 
 ✅ Automates building, linting, formatting, and testing using GitHub Actions.
 
+✅ Advanced logging with winston
+
 ✅ Preconfigured error handlers
 
 ✅ Ensures consistent file naming convention
@@ -68,6 +70,7 @@ Following are the list of predefined scripts available in the app
 ├── prisma
 ├── src
  ├── config
+ ├── lib
  ├── middlewares
  ├── modules
  ├── schemas
@@ -76,14 +79,15 @@ Following are the list of predefined scripts available in the app
  └── utils
 ```
 
-| Folder      | Description                                                                                                              |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------ |
-| prisma      | Used by the Prisma to store database schema definitions, seed data, and other related files.                             |
-| src         | Source folder                                                                                                            |
-| config      | Contains configuration files for the whole app and different libraries.                                                  |
-| middlewares | Contains middleware functions which can be used to modify requests and responses as they pass through the app.           |
-| modules     | Contains the main modules of the app, each of which can contain submodules, controllers, services, and other components. |
-| schemas     | Contains Zod schemas or validation models for API requests and responses, ensuring type safety and validation.           |
-| tests       | Unit and integration tests for validating API functionality and business logic.                                          |
-| types       | Contains type definitions which can be used throughout the app to ensure type safety and consistency.                    |
-| utils       | Contains utility functions or classes that can be used throughout the app for common tasks.                              |
+| Folder      | Description                                                                                                                                               |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| prisma      | Used by the Prisma to store database schema definitions, seed data, and other related files.                                                              |
+| src         | Source folder                                                                                                                                             |
+| config      | Contains configuration files for the whole app and different libraries.                                                                                   |
+| lib         | Contains any external libraries or modules that the app may depend on, as well as any custom utility functions or classes that you have written yourself. |
+| middlewares | Contains middleware functions which can be used to modify requests and responses as they pass through the app.                                            |
+| modules     | Contains the main modules of the app, each of which can contain submodules, controllers, services, and other components.                                  |
+| schemas     | Contains Zod schemas or validation models for API requests and responses, ensuring type safety and validation.                                            |
+| tests       | Unit and integration tests for validating API functionality and business logic.                                                                           |
+| types       | Contains type definitions which can be used throughout the app to ensure type safety and consistency.                                                     |
+| utils       | Contains utility functions or classes that can be used throughout the app for common tasks.                                                               |
