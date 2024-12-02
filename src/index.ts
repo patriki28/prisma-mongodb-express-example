@@ -23,10 +23,17 @@ app.use(cors());
 
 app.use('/api', router);
 
-app.use(errorHandler);
 app.use('*', (req: Request, res: Response, next: NextFunction) => {
-  next(new NotFoundError({ message: `Path ${req.originalUrl} not found` }));
+  next(
+    new NotFoundError({
+      code: 404,
+      message: `Path ${req.originalUrl} not found`,
+      logging: true
+    })
+  );
 });
+
+app.use(errorHandler);
 
 app.listen(APP_PORT, () =>
   logger.info(`Server is running on ${APP_BASE_URL}${APP_PORT}`)

@@ -26,7 +26,7 @@ export const errorHandler = (
       );
     }
 
-    res.status(statusCode).send({ errors });
+    res.status(statusCode).json({ errors });
     return;
   }
 
@@ -48,7 +48,7 @@ export const errorHandler = (
   }
 
   logger.error(JSON.stringify(err, null, 2));
-  res.status(500).send({
-    errors: [{ message: 'Something went wrong' }]
+  res.status(500).json({
+    errors: [{ message: 'Something went wrong. Please try again later.' }]
   });
 };
