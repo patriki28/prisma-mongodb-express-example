@@ -27,7 +27,7 @@ app.use('*', (req: Request, res: Response, next: NextFunction) => {
   next(
     new NotFoundError({
       code: 404,
-      message: `Path ${req.originalUrl} not found`,
+      message: `Path ${req.originalUrl} not found. Go to /api/notes`,
       logging: true
     })
   );
